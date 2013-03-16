@@ -7,7 +7,7 @@ IntroJs is an open source project by <a href="http://usabli.ca/">usabli.ca</a> t
 
 It introduced itself by:
 
-   Better introductions for websites and features with a step-by-step guide for your projects.
+    Better introductions for websites and features with a step-by-step guide for your projects.
 
 read more about IntroJs <a href="https://github.com/usablica/intro.js">here</a>.
 
