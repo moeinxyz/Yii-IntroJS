@@ -9,6 +9,7 @@ extract introjs folder under protected/extentions folder
 Usage:
 in view files
 
+```php
 $this->widget('application.extensions.introjs.IntroJs',array(
     'data'=>array(
         array('id'=>'introID1','step'=>1,'intro'=>'Hello World!'),
@@ -17,3 +18,4 @@ $this->widget('application.extensions.introjs.IntroJs',array(
         array('id'=>'introIDStart','start'=>true), // define one element as starter
     )
 ));
+```
