@@ -1,4 +1,4 @@
-YiiIntroJS
+Yii-IntroJS
 ==========
 
 IntroJs Widget for Yii php framework
