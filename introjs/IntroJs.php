@@ -10,6 +10,7 @@ class IntroJs extends CWidget{
         private $introjsPath;
         
         public $data = array();
+        public $options = array();
         
         public function run()
 	{
@@ -26,12 +27,16 @@ class IntroJs extends CWidget{
                 if (isset($introData['start']) AND $introData['start'] == TRUE){
                     if (!isset($introData['event']))
                         $introData['event'] = 'onclick';
-                    Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.start('". $introData['id'] . "," . $introData['event'] ."')");}
+                    Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.start('". $introData['id'] . "','" . $introData['event'] ."');");}
                 if (isset($introData['exit']) AND $introData['exit'] == TRUE){
                     if (!isset($introData['event']))
                         $introData['event'] = 'onclick';
-                    Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.exit('". $introData['id'] . "," . $introData['event'] ."')");}
+                    Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.exit('". $introData['id'] . "','" . $introData['event'] ."');");}
                 
+            }
+            foreach($this->options as $key=>$introJsOption){
+
+                Yii::app()->clientScript->registerScript('introJsOptions'.$key , 'introJs().setOption("'. $key . '","' . $introJsOption .'");');
             }
 	}
         
