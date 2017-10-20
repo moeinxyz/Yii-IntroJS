@@ -8,9 +8,12 @@ var YiiIntroJS = (function(){
             $("#"+selectorID).attr('data-intro', intro);  
             if (position == 'right' || position == 'left'  || position == 'top' || position == 'bottom')
                 $("#"+selectorID).attr('data-position', position);  
+            else
+                $("#"+selectorID).attr('data-position', 'auto');  
         },
         exit: function(selectorID,event){
             $("#"+selectorID).attr(event, "introJs().exit();");  
         }
+
     }
 }());
