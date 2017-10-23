@@ -24,10 +24,20 @@ class IntroJs extends CWidget{
             foreach($this->data as $introData){
                 if (isset($introData['step']))
                     Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.set('".$introData['id']."',". $introData['step'] .",'". addslashes($introData['intro']) . "','" . addslashes($introData['position']) . "');");
+
+                if (isset($introData['hint']))
+                    Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.setHint('".$introData['id']."',". $introData['hint'] .",'". addslashes($introData['intro']) . "','" . addslashes($introData['position']) . "',". $introData['hintPosition'] .");");
+
                 if (isset($introData['start']) AND $introData['start'] == TRUE){
                     if (!isset($introData['event']))
                         $introData['event'] = 'onclick';
                     Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.start('". $introData['id'] . "','" . $introData['event'] ."');");}
+
+                 if (isset($introData['addHints']) AND $introData['addHints'] == TRUE){
+                    if (!isset($introData['event']))
+                        $introData['event'] = 'onclick';
+                    Yii::app()->clientScript->registerScript('introJs'.$introData['id'],"YiiIntroJS.addHints('". $introData['id'] . "','" . $introData['event'] ."');");}
+
                 if (isset($introData['exit']) AND $introData['exit'] == TRUE){
                     if (!isset($introData['event']))
                         $introData['event'] = 'onclick';
